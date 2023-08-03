@@ -1,0 +1,850 @@
+@keyframes slide {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-100%);
+  }
+}
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Noto Sans", sans-serif;
+  scroll-behavior: smooth;
+}
+
+body header {
+  padding: 10px;
+  background-color: #f6c916;
+  position: fixed;
+  width: 100%;
+  z-index: 2;
+}
+body header nav {
+  display: flex;
+  justify-content: space-between;
+  margin: 0 20px;
+}
+body header nav .logo a img {
+  width: 150px;
+  mix-blend-mode: multiply;
+  filter: contrast(1);
+}
+body header nav .nav-menu {
+  display: none;
+}
+body header nav .hamburger {
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
+  z-index: 1;
+  margin-top: 12px;
+}
+body header nav .hamburger .bar {
+  background-color: #161616;
+  width: 30px;
+  padding: 2px;
+  margin: 3px;
+  transition: 0.3s;
+}
+body header nav .hamburger.active .bar:nth-child(2) {
+  opacity: 0;
+}
+body header nav .hamburger.active .bar:nth-child(1) {
+  transform: translateY(12px) rotate(45deg);
+}
+body header nav .hamburger.active .bar:nth-child(3) {
+  transform: translateY(-8px) rotate(-45deg);
+}
+body header .mobile-nav .mobile-nav-menu {
+  position: fixed;
+  left: -100%;
+  top: 75px;
+  gap: 0;
+  padding-top: 120px;
+  min-height: 100vh;
+  background-color: #f6c916;
+  width: 100%;
+  text-align: center;
+  z-index: 0;
+  transition: 0.3s;
+}
+body header .mobile-nav .mobile-nav-menu.active {
+  left: 0;
+}
+body header .mobile-nav .mobile-nav-menu .mobile-nav-item {
+  list-style-type: none;
+  margin: 16px 0;
+  padding: 10px;
+}
+body header .mobile-nav .mobile-nav-menu .mobile-nav-item .mobile-nav-link {
+  text-decoration: none;
+  color: #161616;
+  display: inline-block;
+  justify-content: center;
+  border: 1px solid #161616;
+  width: 70%;
+  padding: 10px 0;
+}
+body main.inactive {
+  visibility: hidden;
+  transition: 0.3s;
+}
+body main .landing-wrapper {
+  height: 100vh;
+  background-color: #f6c916;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+body main .landing-wrapper .landing {
+  width: 75%;
+  margin-top: 40%;
+  text-align: center;
+}
+body main .landing-wrapper .landing h3 {
+  text-transform: uppercase;
+}
+body main .landing-wrapper .landing h1 {
+  font-size: 40px;
+}
+body main .landing-wrapper .landing .btnLanding {
+  padding: 15px 20px;
+  background-color: #f6c916;
+  border: 1px solid #161616;
+  color: #161616;
+  border-radius: 5px;
+  margin-top: 10px;
+  cursor: pointer;
+}
+body main .landing-wrapper .landing .btnLanding:hover {
+  background-color: #161616;
+  color: #fff;
+  transition: 0.5s;
+}
+body main .landing-wrapper div img {
+  width: 100%;
+  height: 70%;
+  margin-top: 30px;
+}
+body main .logos {
+  overflow: hidden;
+  white-space: nowrap;
+}
+body main .logos .logos-slide {
+  display: inline-block;
+  animation: 30s slide infinite linear;
+}
+body main .logos .logos-slide img {
+  height: 200px;
+  margin: 20px 50px 0;
+}
+body main .features {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 0 40px;
+  margin-bottom: 40px;
+  scroll-margin-top: 50px;
+}
+body main .features h1 {
+  margin: 80px 0 10px;
+  text-align: center;
+}
+body main .features p {
+  text-align: center;
+  width: 80%;
+}
+body main .features .feature-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+body main .features .feature-wrapper article {
+  margin: 50px 30px 20px;
+  padding: 10px;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 2px 5px 15px #a1a1a1;
+  width: 280px;
+  height: 350px;
+}
+body main .features .feature-wrapper article:hover {
+  scale: 1.1;
+  transition: 0.5s;
+}
+body main .features .feature-wrapper article a {
+  text-decoration: none;
+  color: #161616;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}
+body main .features .feature-wrapper article a img {
+  background-color: #f6c916;
+  border-radius: 50%;
+  width: 70px;
+  padding: 10px;
+  margin-top: 15px;
+}
+body main .features .feature-wrapper article a h3 {
+  margin: 15px 0;
+  text-align: center;
+}
+body main .features .feature-wrapper article a p {
+  text-align: center;
+  width: 90%;
+}
+body main .featuresExp {
+  width: 100%;
+  display: flex;
+  flex-direction: column-reverse;
+  scroll-margin-top: 40px;
+}
+body main .featuresExp .featuresExpImg {
+  width: 100%;
+}
+body main .featuresExp .featuresExpImg img {
+  width: 100%;
+  height: 550px;
+  box-shadow: 2px 5px 15px #a1a1a1;
+}
+body main .featuresExp .featuresExpImg .yellow-shape {
+  width: 100%;
+  height: 80px;
+  background-color: #f6c916;
+  font-weight: 700;
+  font-size: 24px;
+  padding: 20px;
+  text-align: center;
+  box-shadow: 2px 5px 15px #a1a1a1;
+}
+body main .featuresExp .featuresExpText {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+  margin-top: 30px;
+}
+body main .featuresExp .featuresExpText h2 {
+  padding: 10px 0;
+}
+body main .featuresExp .featuresExpText p {
+  margin-bottom: 20px;
+  line-height: 30px;
+}
+body main .featuresExp .featuresExpText .tickBenefits {
+  margin-bottom: 20px;
+  margin-left: 10px;
+}
+body main .featuresExp .featuresExpText .tickBenefits img {
+  background-color: #f6c916;
+  border-radius: 50%;
+  width: 20px;
+  padding: 3px;
+}
+body main .featuresExp .featuresExpText .tickBenefits span {
+  margin-left: 5px;
+}
+body main .featuresExp2 {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-top: 30px;
+  scroll-margin-top: 70px;
+}
+body main .featuresExp2 .featuresExpImg2 {
+  width: 100%;
+}
+body main .featuresExp2 .featuresExpImg2 img {
+  width: 100%;
+  height: 550px;
+  box-shadow: 2px 5px 15px #a1a1a1;
+}
+body main .featuresExp2 .featuresExpImg2 .yellow-shape {
+  width: 100%;
+  height: 80px;
+  background-color: #f6c916;
+  font-weight: 700;
+  font-size: 24px;
+  padding: 20px;
+  text-align: center;
+  box-shadow: 2px 5px 15px #a1a1a1;
+}
+body main .featuresExp2 .featuresExpText2 {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+}
+body main .featuresExp2 .featuresExpText2 h2 {
+  padding: 10px 0;
+}
+body main .featuresExp2 .featuresExpText2 p {
+  margin-bottom: 20px;
+  line-height: 30px;
+}
+body main .featuresExp2 .featuresExpText2 .tickBenefits {
+  margin-bottom: 20px;
+  margin-left: 10px;
+}
+body main .featuresExp2 .featuresExpText2 .tickBenefits img {
+  background-color: #f6c916;
+  border-radius: 50%;
+  width: 20px;
+  padding: 3px;
+}
+body main .featuresExp2 .featuresExpText2 .tickBenefits span {
+  margin-left: 5px;
+}
+body main .counter-container {
+  width: 100%;
+  background-color: #f6c916;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 100px;
+  margin-top: 100px;
+}
+body main .counter-container .counter {
+  display: flex;
+  flex-direction: column;
+}
+body main .counter-container .counter div {
+  padding: 10px;
+  margin: 15px;
+  width: 200px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+body main .counter-container .counter div img {
+  width: 70px;
+  margin-bottom: 10px;
+}
+body main .counter-container .counter div .num {
+  font-size: 20px;
+}
+body main .pricing {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  scroll-margin-top: 100px;
+}
+body main .pricing h2 {
+  text-align: center;
+}
+body main .pricing p {
+  text-align: center;
+  margin-bottom: 40px;
+}
+body main .pricing .price-toggler {
+  margin-bottom: 40px;
+  cursor: pointer;
+}
+body main .pricing .price-toggler span {
+  padding: 10px 30px;
+  border: 1px solid #161616;
+}
+body main .pricing .price-toggler .month.active {
+  background-color: #f6c916;
+}
+body main .pricing .price-toggler .year {
+  padding: 10px 40px;
+  border-left: none;
+}
+body main .pricing .price-toggler .year.active {
+  background-color: #f6c916;
+}
+body main .pricing .pricing-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  margin-bottom: 100px;
+}
+body main .pricing .pricing-wrapper .pricing-box {
+  width: 300px;
+  margin: 20px 20px;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 2px 5px 15px #a1a1a1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+body main .pricing .pricing-wrapper .pricing-box:nth-of-type(2) {
+  border: 1px solid #161616;
+}
+body main .pricing .pricing-wrapper .pricing-box h3 {
+  padding: 20px;
+  font-size: 25px;
+}
+body main .pricing .pricing-wrapper .pricing-box .price-month {
+  background-color: #f6c916;
+  width: 100%;
+  padding: 20px;
+  text-align: center;
+  font-weight: bold;
+  font-size: large;
+}
+body main .pricing .pricing-wrapper .pricing-box .price-month span {
+  font-size: small;
+  font-weight: normal;
+}
+body main .pricing .pricing-wrapper .pricing-box .price-month.not-active {
+  display: none;
+}
+body main .pricing .pricing-wrapper .pricing-box .price-year {
+  background-color: #f6c916;
+  width: 100%;
+  padding: 20px;
+  text-align: center;
+  font-weight: bold;
+  font-size: large;
+  display: none;
+}
+body main .pricing .pricing-wrapper .pricing-box .price-year span {
+  font-size: small;
+  font-weight: normal;
+}
+body main .pricing .pricing-wrapper .pricing-box .price-year.active {
+  display: block;
+}
+body main .pricing .pricing-wrapper .pricing-box .price-list {
+  display: inline-block;
+  margin-bottom: 10px;
+}
+body main .pricing .pricing-wrapper .pricing-box .price-list div {
+  padding: 12px;
+  text-align: center;
+}
+body main .pricing .pricing-wrapper .pricing-box .price-list div img {
+  background-color: #f6c916;
+  border-radius: 50%;
+  width: 20px;
+  padding: 3px;
+}
+body main .pricing .pricing-wrapper .pricing-box .price-list div span {
+  margin-left: 5px;
+}
+body main .pricing .pricing-wrapper .pricing-box button {
+  width: 70%;
+  padding: 8px;
+  background-color: #f6c916;
+  border: 1px solid #161616;
+  color: #161616;
+  border-radius: 5px;
+  margin-bottom: 20px;
+  cursor: pointer;
+}
+body main .pricing .pricing-wrapper .pricing-box button:hover {
+  background-color: #161616;
+  color: #fff;
+  transition: 0.5s;
+}
+body main .reviews {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin-bottom: 120px;
+  scroll-margin-top: 120px;
+}
+body main .reviews #carouselExampleIndicators {
+  width: 100%;
+  z-index: 0;
+}
+body main .reviews #carouselExampleIndicators .carousel-indicators {
+  filter: invert(100%);
+}
+body main .reviews #carouselExampleIndicators .carousel-inner .carousel-item {
+  height: 650px;
+}
+body main .reviews #carouselExampleIndicators .carousel-inner .carousel-item .container {
+  height: 100%;
+  width: 70%;
+}
+body main .reviews #carouselExampleIndicators .carousel-inner .carousel-item .container .review1 {
+  background-image: url("./images/review1.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background-position: 0 -12px;
+}
+body main .reviews #carouselExampleIndicators .carousel-inner .carousel-item .container .review2 {
+  background-image: url("./images/review2.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background-position: 0 -12px;
+}
+body main .reviews #carouselExampleIndicators .carousel-inner .carousel-item .container .review3 {
+  background-image: url("./images/review3.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background-position: -20px 0;
+}
+body main .reviews #carouselExampleIndicators .carousel-inner .carousel-item .container .review4 {
+  background-image: url("./images/review4.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+}
+body main .reviews #carouselExampleIndicators .carousel-inner .carousel-item .container .review5 {
+  background-image: url("./images/review5.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+}
+body main .reviews #carouselExampleIndicators .carousel-inner .carousel-item .container .name {
+  margin-top: 10px;
+}
+body main .reviews #carouselExampleIndicators .carousel-inner .carousel-item .container .company {
+  font-size: small;
+  margin-bottom: 10px;
+}
+body main .reviews #carouselExampleIndicators .carousel-inner .carousel-item .container .stars {
+  margin-top: 10px;
+}
+body main .reviews #carouselExampleIndicators .carousel-inner .carousel-item .container .stars img {
+  width: 30px;
+}
+body main .reviews #carouselExampleIndicators .carousel-inner .carousel-item .container .mark-left {
+  width: 30px;
+  background-color: transparent;
+  align-self: flex-start;
+  margin-top: 10px;
+}
+body main .reviews #carouselExampleIndicators .carousel-inner .carousel-item .container p {
+  font-style: italic;
+  margin: 10px 25px;
+}
+body main .reviews #carouselExampleIndicators .carousel-inner .carousel-item .container .mark-right {
+  width: 30px;
+  background-color: transparent;
+  align-self: flex-end;
+}
+body main .reviews #carouselExampleIndicators .carousel-control-prev {
+  filter: invert(100%);
+}
+body main .reviews #carouselExampleIndicators .carousel-control-next {
+  filter: invert(100%);
+}
+body footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+  background-color: #161616;
+  color: white;
+  font-size: 14px;
+  padding-top: 20px;
+}
+body footer .footer-container {
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-start;
+  flex-direction: column;
+  width: 80%;
+  margin-bottom: 40px;
+}
+body footer .footer-container .contact {
+  margin-bottom: 30px;
+}
+body footer .footer-container .contact img {
+  margin-bottom: 5px;
+  width: 130px;
+}
+body footer .footer-container .contact p {
+  margin: 5px 0;
+}
+body footer .footer-container .contact p:last-of-type {
+  margin-top: 15px;
+}
+body footer .footer-container .contact .social-media a {
+  margin-right: 5px;
+}
+body footer .footer-container .navigation {
+  margin-bottom: 30px;
+}
+body footer .footer-container .navigation nav p {
+  text-transform: uppercase;
+}
+body footer .footer-container .navigation nav ul {
+  list-style-type: none;
+}
+body footer .footer-container .navigation nav ul li {
+  margin-top: 5px;
+}
+body footer .footer-container .navigation nav ul li a {
+  text-decoration: none;
+  color: white;
+}
+body footer .footer-container .newsletter {
+  width: 100%;
+}
+body footer .footer-container .newsletter p:first-of-type {
+  text-transform: uppercase;
+}
+body footer .footer-container .newsletter p:last-of-type {
+  width: 90%;
+}
+body footer .footer-container .newsletter input {
+  padding: 3px;
+  width: 240px;
+  margin-bottom: 5px;
+}
+body footer .footer-container .newsletter input:focus {
+  outline: none;
+  border: 2px solid #f6c916;
+}
+body footer .footer-container .newsletter .btnSignUp {
+  padding: 3px 15px;
+  background-color: white;
+  border: 2px solid white;
+  margin-left: 5px;
+  cursor: pointer;
+}
+body footer .footer-container .newsletter .btnSignUp:hover {
+  background-color: #161616;
+  color: white;
+}
+body footer .small {
+  font-size: smaller;
+}
+
+@media screen and (min-width: 811px) and (min-height: 500px) {
+  body header nav .nav-menu {
+    display: flex;
+    list-style-type: none;
+  }
+  body header nav .nav-menu li {
+    margin: 10px;
+  }
+  body header nav .nav-menu li a {
+    padding: 15px 30px;
+    text-decoration: none;
+    color: #161616;
+    position: relative;
+    font-size: 17px;
+  }
+  body header nav .nav-menu li a::before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    width: 0;
+    height: 1px;
+    background-color: #161616;
+    transition: width 0.25s ease-in;
+    display: block;
+  }
+  body header nav .nav-menu li a:hover {
+    text-decoration: none;
+    color: #161616;
+  }
+  body header nav .nav-menu li a:hover::before {
+    width: 100%;
+  }
+  body header nav .hamburger {
+    display: none;
+  }
+  body main .landing-wrapper {
+    flex-direction: row;
+  }
+  body main .landing-wrapper .landing {
+    position: absolute;
+    top: 35%;
+    left: 5%;
+    width: 600px;
+    margin-top: 0;
+    text-align: left;
+  }
+  body main .landing-wrapper .landing h1 {
+    font-size: 60px;
+  }
+  body main .landing-wrapper div img {
+    width: 700px;
+    height: 500px;
+    position: absolute;
+    top: 20%;
+    right: 5%;
+  }
+  body main .features {
+    margin-bottom: 100px;
+  }
+  body main .featuresExp {
+    height: 100vh;
+    flex-direction: row;
+    justify-content: center;
+    padding: 80px;
+    position: relative;
+  }
+  body main .featuresExp .featuresExpImg {
+    margin-left: 70px;
+    width: -moz-fit-content;
+    width: fit-content;
+  }
+  body main .featuresExp .featuresExpImg img {
+    width: 400px;
+    position: absolute;
+    border-radius: 10px;
+    box-shadow: 2px 5px 15px #a1a1a1;
+  }
+  body main .featuresExp .featuresExpImg .yellow-shape {
+    width: 350px;
+    position: relative;
+    top: 30px;
+    left: 130px;
+    border-radius: 10px;
+  }
+  body main .featuresExp .featuresExpText {
+    padding: 10px;
+    width: 600px;
+    height: 550px;
+    margin-left: 200px;
+    margin-top: 0;
+  }
+  body main .featuresExp .featuresExpText .tickBenefits span {
+    margin-right: 20px;
+  }
+  body main .featuresExp2 {
+    height: 100vh;
+    flex-direction: row;
+    padding: 80px;
+    position: relative;
+  }
+  body main .featuresExp2 .featuresExpImg2 {
+    margin-right: 140px;
+    width: -moz-fit-content;
+    width: fit-content;
+  }
+  body main .featuresExp2 .featuresExpImg2 img {
+    width: 400px;
+    position: absolute;
+    border-radius: 10px;
+    box-shadow: 2px 5px 15px #a1a1a1;
+  }
+  body main .featuresExp2 .featuresExpImg2 .yellow-shape {
+    width: 350px;
+    position: relative;
+    top: 30px;
+    right: 110px;
+    border-radius: 10px;
+  }
+  body main .featuresExp2 .featuresExpText2 {
+    padding: 10px;
+    width: 600px;
+    height: 550px;
+    margin-left: 80px;
+    margin-right: 120px;
+  }
+  body main .featuresExp2 .featuresExpText2 .tickBenefits span {
+    margin-left: 5px;
+  }
+  body main .counter-container {
+    height: 40vh;
+    margin-top: 0;
+  }
+  body main .counter-container .counter {
+    flex-direction: row;
+  }
+  body main .counter-container .counter div {
+    margin: 50px;
+  }
+  body main .pricing .pricing-wrapper {
+    flex-direction: row;
+    margin-bottom: 150px;
+  }
+  body main .reviews #carouselExampleIndicators {
+    width: 80%;
+  }
+  body main .reviews #carouselExampleIndicators .carousel-inner .carousel-item {
+    height: 500px;
+  }
+  body main .reviews #carouselExampleIndicators .carousel-inner .carousel-item .container {
+    width: 60%;
+  }
+  body footer .footer-container {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: row;
+  }
+  body footer .footer-container .contact {
+    margin-bottom: 0;
+  }
+  body footer .footer-container .navigation {
+    margin-bottom: 0;
+  }
+  body footer .footer-container .newsletter {
+    width: -moz-fit-content;
+    width: fit-content;
+  }
+  body footer .footer-container .newsletter p:last-of-type {
+    width: 350px;
+  }
+}
+/* Za landscape */
+@media screen and (max-height: 500px) and (orientation: landscape) {
+  body header .mobile-nav .mobile-nav-menu {
+    padding-top: 0px;
+  }
+  body header .mobile-nav .mobile-nav-menu .mobile-nav-item {
+    padding: 0;
+  }
+  body header .mobile-nav .mobile-nav-menu .mobile-nav-item .mobile-nav-link {
+    width: 40%;
+  }
+  body main .landing-wrapper {
+    flex-direction: row;
+  }
+  body main .landing-wrapper .landing {
+    position: absolute;
+    top: 30%;
+    left: 5%;
+    width: 300px;
+    margin-top: 0;
+    text-align: left;
+  }
+  body main .landing-wrapper .landing h3 {
+    font-size: 20px;
+  }
+  body main .landing-wrapper .landing h1 {
+    font-size: 30px;
+  }
+  body main .landing-wrapper div img {
+    width: 400px;
+    height: 300px;
+    position: absolute;
+    top: 12%;
+  }
+  body main .reviews #carouselExampleIndicators .carousel-inner .carousel-item {
+    height: 480px;
+  }
+}/*# sourceMappingURL=style.css.map */
