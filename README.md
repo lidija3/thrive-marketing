@@ -4,7 +4,7 @@
 
 Thrive Marketing is an example website for a marketing company that promotes its marketing app. There are information about the app and users can choose a pricing plan. Users can also subscribe to company weekly newsletter to get the latest marketing tips.
 
-## Built with
+## Technologies Used
 
 * HTML
 * SCSS
